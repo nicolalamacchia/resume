@@ -9,6 +9,7 @@ LABEL "com.github.actions.color"="blue"
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends \
+    texlive-fonts-recommended \
     texlive-fonts-extra \
     texlive-lang-english \
     texlive-xetex && \
