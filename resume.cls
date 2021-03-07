@@ -107,9 +107,9 @@
             {\large\bfseries}
             {}{0pt}{}
 
-        \subsection{\large\bfseries #1\thickspace}%
-        \ifthenelse{\equal{#2}{}}{}{at \thickspace\textbf{#2}\thickspace}%
-        \ifthenelse{\equal{#5}{}}{}{\space#5\thickspace}%
+        \subsection{\large\bfseries #1~~}%
+        \ifthenelse{\equal{#2}{}}{}{at ~\textbf{#2}~~}%
+        \ifthenelse{\equal{#5}{}}{}{#5~~}%
         \ifthenelse{\equal{#3}{}}{}{%
             (%
                 #3%
