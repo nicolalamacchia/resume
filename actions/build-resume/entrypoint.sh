@@ -14,7 +14,6 @@ done
 for filename in *.tex; do
     [ -f "$filename" ] || break
     echo "Converting $filename to PDF..."
-    xelatex "$filename"
+    xelatex -output-directory "$OUT_DIR" "$filename"
 done
 
-cp "*.pdf" "$OUT_DIR"
