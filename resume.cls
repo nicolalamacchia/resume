@@ -13,6 +13,7 @@
 \RequirePackage{changepage}
 \RequirePackage{array}
 \RequirePackage{ifthen}
+\RequirePackage[hidelinks]{hyperref}
 \RequirePackage[margin=2.5cm,footskip=0.63cm]{geometry}
 \RequirePackage{multicol}
 \RequirePackage[skins]{tcolorbox}
@@ -32,6 +33,7 @@
 \color{cvfg}
 \pagenumbering{gobble}
 \parindent0pt
+\urlstyle{same}
 
 \titleformat{\section}
     {\large\bfseries\color{cvblue}\uppercase}
@@ -146,7 +148,7 @@
             \begin{tabular}[b]{ @{}r l@{} }
                 {\textcolor{cvblue}{Email}} & \textbf{#1}\\
                 {\textcolor{cvblue}{Phone}} & \textbf{#2}\\
-                {\textcolor{cvblue}{Website}} & \textbf{#3}\\
+                {\textcolor{cvblue}{Website}} & \textbf{\url{#3}}\\
             \end{tabular}%
         }%
     }%
