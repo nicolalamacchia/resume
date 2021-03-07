@@ -16,6 +16,7 @@
 \RequirePackage[margin=2.5cm,footskip=0.63cm]{geometry}
 \RequirePackage{multicol}
 \RequirePackage[skins]{tcolorbox}
+\RequirePackage{fancyhdr}
 
 %
 % custom colors (compliant with WCAG AAA)
@@ -170,5 +171,10 @@
             {#6}%
     }
     \vspace*{2pt}
+}
+
+\newcommand*{\footerinfo}[1]{%
+    \fancypagestyle{sourceinfo}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{#1}}
+    \pagestyle{sourceinfo}
 }
 
