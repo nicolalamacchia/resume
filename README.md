@@ -1,5 +1,7 @@
 # Nicola's Résumé
 
+[![Generate PDF from TeX](https://github.com/nicolalamacchia/resume/actions/workflows/build.yml/badge.svg)](https://github.com/nicolalamacchia/resume/actions/workflows/build.yml)
+
 LaTeX code of my personal résumé. It consists of:
 
 * a class file (`resume.cls`), which provides the page settings and custom
@@ -14,4 +16,3 @@ actions. Refer to `actions/build-resume/Dockerfile` for more information.
 
 The PDF is generated using the `xelatex` compiler, based on the XeLaTeX engine,
 provided by the XeTeX TeXLive package.
-
