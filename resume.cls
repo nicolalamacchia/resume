@@ -146,7 +146,7 @@
             \setlength\tabcolsep{3pt}
             \setlength\extrarowheight{1.5pt}
             \begin{tabular}[b]{ @{}r l@{} }
-                {\textcolor{cvblue}{Email}} & \textbf{#1}\\
+                {\textcolor{cvblue}{Email}} & \textbf{\href{mailto:#1}{#1}}\\
                 {\textcolor{cvblue}{Phone}} & \textbf{#2}\\
                 {\textcolor{cvblue}{Website}} & \textbf{\url{#3}}\\
             \end{tabular}%
