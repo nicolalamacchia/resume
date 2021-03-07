@@ -6,6 +6,7 @@ LABEL "com.github.actions.name"="Convert TeX to PDF"
 LABEL "com.github.actions.description"="Convert documents to PDF using xelatex."
 LABEL "com.github.actions.icon"="code"
 LABEL "com.github.actions.color"="blue"
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update && \
     apt install --yes --no-install-recommends \
     texlive-fonts-extra \
