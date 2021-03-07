@@ -1,0 +1,23 @@
+name: "Generate PDF from TeX"
+on:
+  push:
+    branches: [main]
+defaults:
+  run:
+    working-directory: .
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: TeX to PDF
+        uses: ./actions/build-resume
+        env:
+          OUT_DIR: public
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: files
+          path: public/
+
