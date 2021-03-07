@@ -29,8 +29,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.timestamp.outputs.date }}
-          release_name: Release ${{ steps.timestamp.outputs.date }}
+          tag_name: ${{ steps.timestamp.outputs.timestamp }}
+          release_name: Release ${{ steps.timestamp.outputs.timestamp }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
