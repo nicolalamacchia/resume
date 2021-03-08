@@ -137,8 +137,8 @@
 % #3 - Name Pronounciation
 \newcommand*{\name}[3]{%
     \vbox{%
-        \hbox{{\crimsonpro\fontsize{30}{30}\selectfont #1 #2}\\}
-        \vspace*{4pt}
+        \hbox{\crimsonpro\fontsize{34}{34}\selectfont #1 #2}
+        \vspace*{10pt}
         \hbox{{\textcolor{cvgray}\noindent #3}}
     }
 }
@@ -146,16 +146,20 @@
 % #1 - e-mail
 % #2 - Phone Number
 % #3 - Website
-\newcommand*{\contacts}[3]{%
+% #4 - Location
+\newcommand*{\contacts}[4]{%
     \vbox{%
         \hbox{%
             \setlength\tabcolsep{3pt}
-            \setlength\extrarowheight{1.5pt}
-            \begin{tabular}[b]{ @{}r l@{} }
-                {\textcolor{cvblue}{Email}} & \textbf{\href{mailto:#1}{#1}}\\
-                {\textcolor{cvblue}{Phone}} & \textbf{#2}\\
-                {\textcolor{cvblue}{Website}} & \textbf{\url{#3}}\\
-            \end{tabular}%
+            \setlength\extrarowheight{0.3pt}
+            \begin{small}
+                \begin{tabular}[b]{@{}r l@{}}
+                    {\textcolor{cvblue}{Email}} & \textbf{\href{mailto:#1}{#1}}\\
+                    {\textcolor{cvblue}{Phone}} & \textbf{#2}\\
+                    {\textcolor{cvblue}{Website}} & \textbf{\url{#3}}\\
+                    {\textcolor{cvblue}{Location}} & \textbf{#4}\\
+                \end{tabular}%
+            \end{small}%
         }%
     }%
 }
@@ -166,7 +170,8 @@
 % #4 - e-mail
 % #5 - Phone Number
 % #6 - Website
-\newcommand*{\heading}[6]{%
+% #7 - Location
+\newcommand*{\heading}[7]{%
     \leavevmode\hbox to \textwidth{%
         \name%
             {#1}%
@@ -177,6 +182,7 @@
             {#4}%
             {#5}%
             {#6}%
+            {#7}%
     }
     \vspace*{2pt}
 }
