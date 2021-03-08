@@ -71,6 +71,14 @@
 }%
 {\end{multicols}}
 
+\newenvironment{languagessection}{
+    \vspace*{\baselineskip}
+    \setlength\extrarowheight{0.5\baselineskip}
+    \begin{tabular}{@{}rl}
+}{
+    \end{tabular}
+}
+
 %
 % commands
 
@@ -92,9 +100,7 @@
 % #1 - Language
 % #2 - Proficiency
 \newcommand*{\lang}[2]{%
-    \begin{cvsection}
-        {\large\textbf{#1}}: #2
-    \end{cvsection}
+    {\large\textbf{#1}} & #2 \\
 }
 
 % #1 - Role
