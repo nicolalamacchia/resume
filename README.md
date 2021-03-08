@@ -7,7 +7,7 @@ LaTeX code of my personal résumé. It consists of:
 * a class file (`resume.cls`), which provides the page settings and custom
   colors, commands and environments
 * a TeX file (`resume.tex`), which contains the page structure and sections
-  (it's almost completely human-readable)
+  with their content (it's almost completely human-readable)
 
 ## Build process
 
