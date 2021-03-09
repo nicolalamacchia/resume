@@ -11,7 +11,7 @@
 \RequirePackage{changepage}
 \RequirePackage{array}
 \RequirePackage{ifthen}
-\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[hidelinks,pdfusetitle]{hyperref}
 \RequirePackage[margin=2.5cm,footskip=0.63cm]{geometry}
 \RequirePackage{multicol}
 \RequirePackage[skins]{tcolorbox}
