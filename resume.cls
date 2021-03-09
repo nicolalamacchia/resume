@@ -6,10 +6,8 @@
 \LoadClass[a4paper]{article}
 
 \RequirePackage{titlesec}
-\RequirePackage{xcolor}
 \RequirePackage{CrimsonPro}
 \RequirePackage[familydefault]{Rosario}
-\RequirePackage{relsize}
 \RequirePackage{changepage}
 \RequirePackage{array}
 \RequirePackage{ifthen}
