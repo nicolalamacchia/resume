@@ -42,7 +42,7 @@
 
 \titleformat{\paragraph}{}{}{}{}
 
-\titlespacing*{\section}{0pt}{2\baselineskip}{0.7\baselineskip}
+\titlespacing*{\section}{0pt}{2\baselineskip}{0.2\baselineskip}
 \titlespacing*{\subsection}{0pt}{1.5\baselineskip}{0.1\baselineskip}
 \titlespacing*{\paragraph}{0pt}{0.5\baselineskip}{0pt}
 
@@ -75,6 +75,7 @@
     \begin{tabular}{@{}rl}
 }{
     \end{tabular}
+    \vspace*{0.5\baselineskip}
 }
 
 %
