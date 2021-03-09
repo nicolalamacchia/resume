@@ -11,8 +11,15 @@ LaTeX code of my personal résumé. It consists of:
 
 ## Build process
 
-The résumé gets built at every push on the `main` branch through GitHub
-actions. Refer to `actions/build-resume/Dockerfile` for more information.
+The résumé gets built at every push on the `main` branch (only if it affects
+either `resume.tex` or `resume.cls`) through GitHub actions. Refer to
+`actions/build-resume/Dockerfile` for more information, especially on the
+needed dependencies (since they vary according to the OS and TeX distribution,
+I'm not listing them here).
 
 The PDF is generated using the `xelatex` compiler, based on the XeLaTeX engine,
 provided by the XeTeX TeXLive package.
+
+To build it manually, just run `make` (the TeX engine and the necessary TeX
+packages need to be installed first).
+
