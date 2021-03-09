@@ -57,5 +57,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@${${GITHUB_SERVER_URL#http://}#https://}/${GITHUB_REPOSITORY}.git
-          git push --delete origin ${{ steps.timestamp.outputs.ts }}
+          git push --delete origin ${{ steps.timestamp.outputs.timestamp }}
 
