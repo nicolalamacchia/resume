@@ -2,6 +2,9 @@ name: "Generate PDF from TeX"
 on:
   push:
     branches: [main]
+    paths:
+      - 'resume.tex'
+      - 'resume.cls'
 defaults:
   run:
     working-directory: .
@@ -48,14 +51,7 @@ jobs:
           curl --fail -X POST \
             --data-urlencode "token=${{ secrets.RELEASE_TOKEN }}" \
             --data-urlencode "app=resume" \
-            --data-urlencode "ts=${{ steps.timestamp.outputs.ts }}" \
+            --data-urlencode "ts=${{ steps.timestamp.outputs.timestamp }}" \
             -H "Content-Type: application/x-www-form-urlencoded" \
             https://nicola.link/ci-update
-      - name: Cleanup on Failure
-        if: failure()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@${${GITHUB_SERVER_URL#http://}#https://}/${GITHUB_REPOSITORY}.git
-          git push --delete origin ${{ steps.timestamp.outputs.timestamp }}
 
