@@ -58,8 +58,8 @@
 {\end{adjustwidth}}
 
 \newenvironment{cvsection}{
-    \begin{minipage}{\textwidth}
     \vspace{1.3\baselineskip}
+    \begin{minipage}{\textwidth}
 }%
 {\end{minipage}}
 
@@ -112,9 +112,9 @@
     \begin{cvsection}
         \titleformat{\subsection}[runin]
             {\large\bfseries}
-            {}{0pt}{}
+            {}{0pt}{}[~~]
 
-        \subsection{\large\bfseries #1~~}%
+        \subsection{\large\bfseries #1}%
         \ifthenelse{\equal{#2}{}}{}{at ~\textbf{#2}~~}%
         \ifthenelse{\equal{#5}{}}{}{#5~~}%
         \ifthenelse{\equal{#3}{}}{}{%
