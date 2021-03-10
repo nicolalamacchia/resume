@@ -75,7 +75,7 @@
     \begin{tabular}{@{}rl}
 }{
     \end{tabular}
-    \vspace*{0.5\baselineskip}
+    \vspace*{0.9\baselineskip}
 }
 
 %
