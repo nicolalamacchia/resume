@@ -114,7 +114,12 @@
             {\large\bfseries}
             {}{0pt}{}[~~]
 
-        \subsection{\large\bfseries #1}%
+        \ifthenelse{\equal{#3}{}}{}{%
+            \ifthenelse{\equal{#4}{}}{\def \tocdates{#3}}{\def \tocdates{#3\textendash #4}}%
+        }
+        \ifthenelse{\equal{\tocdates}{}}{\def \tocactivity{#1}}{\def \tocactivity{\tocdates: #1}}
+
+        \subsection[\tocactivity]{\large\bfseries #1}%
         \ifthenelse{\equal{#2}{}}{}{at ~\textbf{#2}~~}%
         \ifthenelse{\equal{#5}{}}{}{#5~~}%
         \ifthenelse{\equal{#3}{}}{}{%
