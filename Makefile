@@ -5,7 +5,7 @@ default: resume.pdf ## Build the default target
 
 .PHONY: clean
 clean: ## Remove output files
-	rm *.pdf *.aux *.log *.out
+	rm -f *.pdf *.aux *.log *.out
 
 .PHONY: help
 help: ## Display this help
