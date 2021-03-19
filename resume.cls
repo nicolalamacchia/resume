@@ -187,7 +187,7 @@
 }
 
 \newcommand*{\footerinfo}[1]{%
-    \fancypagestyle{sourceinfo}{\fancyhf{}\fancyfoot[C]{#1}}
+    \fancypagestyle{sourceinfo}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{#1}}
     \pagestyle{sourceinfo}
 }
 
