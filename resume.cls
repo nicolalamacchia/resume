@@ -12,7 +12,7 @@
 \RequirePackage{array}
 \RequirePackage{ifthen}
 \RequirePackage[hidelinks,pdfusetitle]{hyperref}
-\RequirePackage[margin=2.5cm,footskip=18pt]{geometry}
+\RequirePackage[margin=2.5cm,footskip=32pt]{geometry}
 \RequirePackage{multicol}
 \RequirePackage[skins]{tcolorbox}
 \RequirePackage{fancyhdr}
