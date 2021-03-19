@@ -30,7 +30,7 @@
 
 \color{cvfg}
 \pagenumbering{gobble}
-\parindent0pt
+\parindent 0pt
 \urlstyle{same}
 
 \titleformat{\section}
