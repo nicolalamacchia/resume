@@ -10,7 +10,7 @@ clean: ## Remove output files
 
 .PHONY: open
 open: $(TARGET) ## Open the generated file (for some *nix OSs)
-ifneq ($(shell command -v xdg-ope 2> /dev/null),)
+ifneq ($(shell command -v xdg-open 2> /dev/null),)
 	@xdg-open $(TARGET)
 else ifneq ($(shell command -v open 2> /dev/null),)
 	@open $(TARGET)
