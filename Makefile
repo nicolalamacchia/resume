@@ -1,7 +1,8 @@
-TEX=xelatex
+TEX    = xelatex
+TARGET = resume.pdf
 
 .PHONY: default
-default: resume.pdf ## Build the default target
+default: $(TARGET) ## Build the default target
 
 .PHONY: clean
 clean: ## Remove output files
