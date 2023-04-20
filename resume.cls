@@ -16,6 +16,9 @@
 \RequirePackage{multicol}
 \RequirePackage[skins]{tcolorbox}
 \RequirePackage{fancyhdr}
+\RequirePackage[totpages]{zref}
+
+\pagestyle{fancy}
 
 %
 % custom colors (compliant with WCAG AAA)
@@ -29,7 +32,6 @@
 % page settings
 
 \color{cvfg}
-\pagenumbering{gobble}
 \parindent 0pt
 \urlstyle{same}
 
@@ -192,7 +194,9 @@
 }
 
 \newcommand*{\footerinfo}[1]{%
-    \fancypagestyle{sourceinfo}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{#1}}
-    \pagestyle{sourceinfo}
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot[C]{%
+        \ifnum\value{page}=\ztotpages{#1}\fi
+    }
 }
-
