@@ -97,6 +97,7 @@
 %
 % commands
 
+% #1 - Color
 \newcommand{\separator}[1][cvfg]{\textcolor{#1}{\noindent\rule{\linewidth}{0.5pt}}}
 
 % #1 - Summary
@@ -209,6 +210,7 @@
     \vspace*{2pt}
 }
 
+% #1 - Footnote
 \newcommand*{\footerinfo}[1]{%
     \fancyhf{}
     \renewcommand{\headrulewidth}{0pt}
