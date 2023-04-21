@@ -97,64 +97,6 @@
 %
 % commands
 
-% #1 - Color
-\newcommand{\separator}[1][cvfg]{\textcolor{#1}{\noindent\rule{\linewidth}{0.5pt}}}
-
-% #1 - Summary
-\newcommand*{\summary}[1]{%
-    \paragraph{}
-    #1
-}
-
-% #1 - Skill Section Title
-% #2 - Skills
-\newcommand*{\skills}[2]{%
-    \subsection{#1}
-    #2
-}
-
-% #1 - Language
-% #2 - Proficiency
-\newcommand*{\lang}[2]{%
-    {\large\textbf{#1}} & #2 \\
-}
-
-% #1 - Role
-% #2 - Company Name
-% #3 - Start Date
-% #4 - End Date
-% #5 - Location
-% #6 - Description
-\newcommand*{\activity}[6]{%
-    \begin{proxp}
-        \ifthenelse{\equal{#3}{}}{}{%
-            \ifthenelse{\equal{#4}{}}{\def \tocdates{#3}}{\def \tocdates{#3\textendash #4}}%
-        }
-        \ifthenelse{\equal{\tocdates}{}}{\def \tocactivity{#1}}{\def \tocactivity{\tocdates: #1}}
-
-        \def \proxptitle{%
-            \large\bfseries #1
-            \normalsize\normalfont
-            \ifthenelse{\equal{#2}{}}{}{~at ~\textbf{#2}~~}%
-            \ifthenelse{\equal{#5}{}}{}{#5~~}%
-            \ifthenelse{\equal{#3}{}}{}{%
-                (%
-                    #3%
-                    \ifthenelse{\equal{#4}{}}{}{\textendash #4}%
-                )%
-            }
-        }
-
-        \subsection[\tocactivity]{\proxptitle}
-
-        \ifthenelse{\equal{#6}{}}{}{%
-            \begin{proxpcontent}
-            #6
-            \end{proxpcontent}
-        }
-    \end{proxp}
-}
-
 % #1 - First Name + Middle Name(s)
 % #2 - Last Name
 % #3 - Name Pronounciation
@@ -208,6 +150,64 @@
             {#7}%
     }
     \vspace*{2pt}
+}
+
+% #1 - Color
+\newcommand{\separator}[1][cvfg]{\textcolor{#1}{\noindent\rule{\linewidth}{0.5pt}}}
+
+% #1 - Summary
+\newcommand*{\summary}[1]{%
+    \paragraph{}
+    #1
+}
+
+% #1 - Role
+% #2 - Company Name
+% #3 - Start Date
+% #4 - End Date
+% #5 - Location
+% #6 - Description
+\newcommand*{\activity}[6]{%
+    \begin{proxp}
+        \ifthenelse{\equal{#3}{}}{}{%
+            \ifthenelse{\equal{#4}{}}{\def \tocdates{#3}}{\def \tocdates{#3\textendash #4}}%
+        }
+        \ifthenelse{\equal{\tocdates}{}}{\def \tocactivity{#1}}{\def \tocactivity{\tocdates: #1}}
+
+        \def \proxptitle{%
+            \large\bfseries #1
+            \normalsize\normalfont
+            \ifthenelse{\equal{#2}{}}{}{~at ~\textbf{#2}~~}%
+            \ifthenelse{\equal{#5}{}}{}{#5~~}%
+            \ifthenelse{\equal{#3}{}}{}{%
+                (%
+                    #3%
+                    \ifthenelse{\equal{#4}{}}{}{\textendash #4}%
+                )%
+            }
+        }
+
+        \subsection[\tocactivity]{\proxptitle}
+
+        \ifthenelse{\equal{#6}{}}{}{%
+            \begin{proxpcontent}
+            #6
+            \end{proxpcontent}
+        }
+    \end{proxp}
+}
+
+% #1 - Language
+% #2 - Proficiency
+\newcommand*{\lang}[2]{%
+    {\large\textbf{#1}} & #2 \\
+}
+
+% #1 - Skill Section Title
+% #2 - Skills
+\newcommand*{\skills}[2]{%
+    \subsection{#1}
+    #2
 }
 
 % #1 - Footnote
