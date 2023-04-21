@@ -44,7 +44,7 @@
 
 \titleformat{\paragraph}{}{}{}{}
 
-\titlespacing*{\section}{0pt}{2\baselineskip}{0.2\baselineskip}
+\titlespacing*{\section}{0pt}{2\baselineskip}{1.5\baselineskip}
 \titlespacing*{\subsection}{0pt}{1.5\baselineskip}{0.1\baselineskip}
 \titlespacing*{\paragraph}{0pt}{0.5\baselineskip}{0pt}
 
@@ -53,31 +53,45 @@
 %
 % environments
 
-\newenvironment{sectioncontent}{
+\newenvironment{cvsection}{}{
+    \vspace{2\baselineskip}
+}
+
+\newenvironment{proxpcontent}{
     \begin{adjustwidth}{1cm}{2cm}
     \vspace{0.5\baselineskip}
 }%
-{\end{adjustwidth}}
+{
+    \end{adjustwidth}
+    \vspace{\baselineskip}
+}
 
-\newenvironment{cvsection}{
-    \vspace{1.3\baselineskip}
+\newenvironment{proxp}{
     \begin{minipage}{\textwidth}
 }%
-{\end{minipage}}
-
-\newenvironment{skillssection}{
-    \vspace*{0.5\baselineskip}
-    \begin{multicols}{2}
-}%
-{\end{multicols}}
+{
+    \end{minipage}
+}
 
 \newenvironment{languagessection}{
-    \vspace*{\baselineskip}
+    \vspace{-0.5\baselineskip}
+    \begin{cvsection}
     \setlength\extrarowheight{0.5\baselineskip}
     \begin{tabular}{@{}rl}
 }{
     \end{tabular}
-    \vspace*{0.9\baselineskip}
+    \end{cvsection}
+    \vspace{-\baselineskip}
+}
+
+\newenvironment{skillssection}{
+    \vspace{-0.7\baselineskip}
+    \begin{cvsection}
+    \begin{multicols}{2}
+}%
+{
+    \end{multicols}
+    \end{cvsection}
 }
 
 %
@@ -111,31 +125,33 @@
 % #5 - Location
 % #6 - Description
 \newcommand*{\activity}[6]{%
-    \begin{cvsection}
-        \titleformat{\subsection}[runin]
-            {\large\bfseries}
-            {}{0pt}{}[~~]
-
+    \begin{proxp}
         \ifthenelse{\equal{#3}{}}{}{%
             \ifthenelse{\equal{#4}{}}{\def \tocdates{#3}}{\def \tocdates{#3\textendash #4}}%
         }
         \ifthenelse{\equal{\tocdates}{}}{\def \tocactivity{#1}}{\def \tocactivity{\tocdates: #1}}
 
-        \subsection[\tocactivity]{\large\bfseries #1}%
-        \ifthenelse{\equal{#2}{}}{}{at ~\textbf{#2}~~}%
-        \ifthenelse{\equal{#5}{}}{}{#5~~}%
-        \ifthenelse{\equal{#3}{}}{}{%
-            (%
-                #3%
-                \ifthenelse{\equal{#4}{}}{}{\textendash #4}%
-            )%
+        \def \proxptitle{%
+            \large\bfseries #1
+            \normalsize\normalfont
+            \ifthenelse{\equal{#2}{}}{}{~at ~\textbf{#2}~~}%
+            \ifthenelse{\equal{#5}{}}{}{#5~~}%
+            \ifthenelse{\equal{#3}{}}{}{%
+                (%
+                    #3%
+                    \ifthenelse{\equal{#4}{}}{}{\textendash #4}%
+                )%
+            }
         }
+
+        \subsection[\tocactivity]{\proxptitle}
+
         \ifthenelse{\equal{#6}{}}{}{%
-            \begin{sectioncontent}
+            \begin{proxpcontent}
             #6
-            \end{sectioncontent}
+            \end{proxpcontent}
         }
-    \end{cvsection}
+    \end{proxp}
 }
 
 % #1 - First Name + Middle Name(s)
