@@ -18,6 +18,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage[totpages]{zref}
 \RequirePackage{xifthen}
+\RequirePackage{enumitem}
 
 \pagestyle{fancy}
 
@@ -45,33 +46,30 @@
 
 \titleformat{\paragraph}{}{}{}{}
 
-\titlespacing*{\section}{0pt}{2\baselineskip}{1.5\baselineskip}
-\titlespacing*{\subsection}{0pt}{1.5\baselineskip}{0.1\baselineskip}
-\titlespacing*{\paragraph}{0pt}{0.5\baselineskip}{0pt}
+\titlespacing*{\section}{0pt}{2\baselineskip}{\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0.1\baselineskip}
+\titlespacing*{\paragraph}{0pt}{1.1\baselineskip}{0.9\baselineskip}
 
 \renewcommand{\baselinestretch}{1.15}
+
+\setlist[itemize]{topsep=0pt,labelindent=\parindent,leftmargin=*}
 
 %
 % environments
 
 \newenvironment{cvsection}{}{
-    \vspace{2\baselineskip}
+    \vspace{1.5\baselineskip}
 }
 
 \newenvironment{proxpcontent}{
-    \begin{adjustwidth}{1cm}{2cm}
+    \begin{adjustwidth}{1cm}{1.5cm}
     \vspace{0.5\baselineskip}
+    \begin{small}
 }%
 {
+    \end{small}
     \end{adjustwidth}
-    \vspace{\baselineskip}
-}
-
-\newenvironment{proxp}{
-    \begin{minipage}{\textwidth}
-}%
-{
-    \end{minipage}
+    \vspace{0.5\baselineskip}
 }
 
 \newenvironment{languagessection}{
@@ -82,15 +80,18 @@
 }{
     \end{tabular}
     \end{cvsection}
-    \vspace{-\baselineskip}
+    \vspace{-2.5em}
 }
 
 \newenvironment{skillssection}{
     \vspace{-0.7\baselineskip}
+    \titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0.1\baselineskip}
     \begin{cvsection}
     \begin{multicols}{2}
+    \begin{small}
 }%
 {
+    \end{small}
     \end{multicols}
     \end{cvsection}
 }
@@ -168,33 +169,31 @@
 % #5 - Location
 % #6 - Description
 \newcommand*{\activity}[6]{%
-    \begin{proxp}
+    \ifthenelse{\equal{#3}{}}{}{%
+        \ifthenelse{\equal{#4}{}}{\def \tocdates{#3}}{\def \tocdates{#3\textendash #4}}%
+    }
+    \ifthenelse{\equal{\tocdates}{}}{\def \tocactivity{#1}}{\def \tocactivity{\tocdates: #1}}
+
+    \def \proxptitle{%
+        \large\bfseries #1
+        \normalsize\normalfont
+        \ifthenelse{\equal{#2}{}}{}{~at ~\textbf{#2}~~}%
+        \ifthenelse{\equal{#5}{}}{}{#5~~}%
         \ifthenelse{\equal{#3}{}}{}{%
-            \ifthenelse{\equal{#4}{}}{\def \tocdates{#3}}{\def \tocdates{#3\textendash #4}}%
+            (%
+                #3%
+                \ifthenelse{\equal{#4}{}}{}{\textendash #4}%
+            )%
         }
-        \ifthenelse{\equal{\tocdates}{}}{\def \tocactivity{#1}}{\def \tocactivity{\tocdates: #1}}
+    }
 
-        \def \proxptitle{%
-            \large\bfseries #1
-            \normalsize\normalfont
-            \ifthenelse{\equal{#2}{}}{}{~at ~\textbf{#2}~~}%
-            \ifthenelse{\equal{#5}{}}{}{#5~~}%
-            \ifthenelse{\equal{#3}{}}{}{%
-                (%
-                    #3%
-                    \ifthenelse{\equal{#4}{}}{}{\textendash #4}%
-                )%
-            }
-        }
+    \subsection[\tocactivity]{\proxptitle}
 
-        \subsection[\tocactivity]{\proxptitle}
-
-        \ifthenelse{\isempty{#6}}{}{%
-            \begin{proxpcontent}
-            #6
-            \end{proxpcontent}
-        }
-    \end{proxp}
+    \ifthenelse{\isempty{#6}}{}{%
+        \begin{proxpcontent}
+        #6
+        \end{proxpcontent}
+    }
 }
 
 % #1 - Language
