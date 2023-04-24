@@ -150,7 +150,6 @@
             {#6}%
             {#7}%
     }
-    \vspace*{2pt}
 }
 
 % #1 - Color
@@ -159,7 +158,7 @@
 % #1 - Summary
 \newcommand*{\summary}[1]{%
     \titleformat{\paragraph}{}{}{}{}
-    \titlespacing*{\paragraph}{0pt}{1.1\baselineskip}{0.9\baselineskip}
+    \titlespacing*{\paragraph}{0pt}{1.2\baselineskip}{1.3\baselineskip}
 
     \paragraph{#1}
 }
