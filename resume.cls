@@ -44,11 +44,8 @@
     {\large\bfseries}
     {}{0pt}{}
 
-\titleformat{\paragraph}{}{}{}{}
-
 \titlespacing*{\section}{0pt}{2\baselineskip}{\baselineskip}
 \titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0.1\baselineskip}
-\titlespacing*{\paragraph}{0pt}{1.1\baselineskip}{0.9\baselineskip}
 
 \renewcommand{\baselinestretch}{1.15}
 
@@ -161,6 +158,9 @@
 
 % #1 - Summary
 \newcommand*{\summary}[1]{%
+    \titleformat{\paragraph}{}{}{}{}
+    \titlespacing*{\paragraph}{0pt}{1.1\baselineskip}{0.9\baselineskip}
+
     \paragraph{#1}
 }
 
