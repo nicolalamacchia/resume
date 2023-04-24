@@ -62,13 +62,13 @@
 
 \newenvironment{proxpcontent}{
     \begin{adjustwidth}{1cm}{1.5cm}
-    \vspace{0.5\baselineskip}
+    \vspace{0.35\baselineskip}
     \begin{small}
 }%
 {
     \end{small}
     \end{adjustwidth}
-    \vspace{0.5\baselineskip}
+    \vspace{0.2\baselineskip}
 }
 
 \newenvironment{languagessection}{
