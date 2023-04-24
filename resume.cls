@@ -158,8 +158,7 @@
 
 % #1 - Summary
 \newcommand*{\summary}[1]{%
-    \paragraph{}
-    #1
+    \paragraph{#1}
 }
 
 % #1 - Role
