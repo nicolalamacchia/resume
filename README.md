@@ -11,7 +11,7 @@ LaTeX code of my personal résumé. It consists of:
 
 ## Build process
 
-The résumé gets built at every push on the `main` branch (only if it affects
+The résumé gets built at every push to the `main` branch (only if it affects
 either `resume.tex` or `resume.cls`) through GitHub actions. Refer to
 `actions/build-resume/Dockerfile` for more information, especially on the
 needed dependencies (since they vary according to the OS and TeX distribution,
