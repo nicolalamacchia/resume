@@ -17,6 +17,7 @@
 \RequirePackage[skins]{tcolorbox}
 \RequirePackage{fancyhdr}
 \RequirePackage[totpages]{zref}
+\RequirePackage{xifthen}
 
 \pagestyle{fancy}
 
@@ -189,7 +190,7 @@
 
         \subsection[\tocactivity]{\proxptitle}
 
-        \ifthenelse{\equal{#6}{}}{}{%
+        \ifthenelse{\isempty{#6}}{}{%
             \begin{proxpcontent}
             #6
             \end{proxpcontent}
