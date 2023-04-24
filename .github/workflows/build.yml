@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: TeX to PDF
         uses: ./actions/build-resume
         env:
           OUT_DIR: public
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: files
           path: public/
@@ -28,7 +28,7 @@ jobs:
         run: echo "::set-output name=timestamp::$(date +'%Y%m%d-%H%M%S')"
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: nicolalamacchia/create-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -38,7 +38,7 @@ jobs:
           prerelease: false
       - name: Upload Release Asset
         id: upload_release_asset
-        uses: actions/upload-release-asset@v1
+        uses: nicolalamacchia/upload-release-asset@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
