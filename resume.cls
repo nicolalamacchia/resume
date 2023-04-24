@@ -54,6 +54,8 @@
 
 \setlist[itemize]{topsep=0pt,labelindent=\parindent,leftmargin=*}
 
+\hyphenpenalty=750
+
 %
 % environments
 
