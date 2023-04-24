@@ -25,7 +25,7 @@ jobs:
           path: ${{ env.OUT_DIR }}/
       - name: Set Release Tag
         id: timestamp
-        run: echo "::set-output name=timestamp::$(date +'%Y%m%d-%H%M%S')"
+        run: echo "timestamp=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
       - name: Create Release
         id: create_release
         uses: nicolalamacchia/create-release@v2
