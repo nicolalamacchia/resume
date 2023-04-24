@@ -14,6 +14,9 @@ done
 for filename in *.tex; do
     [ -f "$filename" ] || break
     echo "Converting $filename to PDF..."
+    # building twice to generate the page count first,
+    # which is used to place the footer
+    xelatex -output-directory "$OUT_DIR" "$filename"
     xelatex -output-directory "$OUT_DIR" "$filename"
 done
 
