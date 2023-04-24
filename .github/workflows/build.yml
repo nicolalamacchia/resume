@@ -2,9 +2,6 @@ name: "Generate PDF from TeX"
 on:
   push:
     branches: [main]
-    paths:
-      - 'resume.tex'
-      - 'resume.cls'
 defaults:
   run:
     working-directory: .
