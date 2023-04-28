@@ -169,10 +169,17 @@
 % #5 - Location
 % #6 - Description
 \newcommand*{\activity}[6]{%
-    \ifthenelse{\equal{#3}{}}{}{%
-        \ifthenelse{\equal{#4}{}}{\def \tocdates{#3}}{\def \tocdates{#3\textendash #4}}%
+    \ifthenelse{\equal{#3}{}}
+        {}
+        {
+            \ifthenelse{\equal{#4}{}}
+                {\def \tocdates{#3}}
+                {\def \tocdates{#3\textendash #4}}
+        }
+    \ifthenelse{\equal{\tocdates}{}}
+        {\def \tocactivity{#1}}
+        {\def \tocactivity{\tocdates: #1}
     }
-    \ifthenelse{\equal{\tocdates}{}}{\def \tocactivity{#1}}{\def \tocactivity{\tocdates: #1}}
 
     \def \proxptitle{%
         \large\bfseries #1
