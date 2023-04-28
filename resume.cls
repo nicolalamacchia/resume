@@ -185,7 +185,7 @@
         \large\bfseries #1
         \normalsize\normalfont
         \ifthenelse{\equal{#2}{}}{}{~at ~\textbf{#2}~~}%
-        \ifthenelse{\equal{#5}{}}{}{#5~~}%
+        \ifthenelse{\equal{#5}{}}{}{\textemdash~ #5~~}%
         \ifthenelse{\equal{#3}{}}{}{%
             (%
                 #3%
