@@ -20,8 +20,6 @@
 \RequirePackage{xifthen}
 \RequirePackage{enumitem}
 
-\pagestyle{fancy}
-
 %
 % custom colors (compliant with WCAG AAA)
 
@@ -33,6 +31,7 @@
 %
 % page settings
 
+\pagestyle{fancy}
 \color{cvfg}
 \parindent 0pt
 \urlstyle{same}
