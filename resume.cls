@@ -21,6 +21,11 @@
 \RequirePackage{enumitem}
 
 %
+% internal command
+
+\newcommand*{\namefont}{\crimsonpro}
+
+%
 % custom colors (compliant with WCAG AAA)
 
 \definecolor{cvblue}{HTML}{007FAA}
@@ -37,10 +42,10 @@
 \urlstyle{same}
 
 \titleformat{\section}
-    {\large\bfseries\color{cvblue}\uppercase}
+    {\bfseries\color{cvblue}\uppercase}
     {}{0pt}{}
 \titleformat{\subsection}
-    {\large\bfseries}
+    {\bfseries}
     {}{0pt}{}
 
 \titlespacing*{\section}{0pt}{2\baselineskip}{\baselineskip}
@@ -102,7 +107,7 @@
 % #3 - Name Pronounciation
 \newcommand*{\name}[3]{%
     \vbox{%
-        \hbox{\crimsonpro\fontsize{34}{34}\selectfont #1 #2}
+        \hbox{\namefont\fontsize{34}{34}\selectfont #1 #2}
         \vspace*{10pt}
         \hbox{{\textcolor{cvgray}\noindent #3}}
     }
@@ -159,7 +164,7 @@
     \titleformat{\paragraph}{}{}{}{}
     \titlespacing*{\paragraph}{0pt}{1.2\baselineskip}{1.3\baselineskip}
 
-    \paragraph{#1}
+    \paragraph{\small#1}
 }
 
 % #1 - Role
@@ -182,8 +187,8 @@
     }
 
     \def \proxptitle{%
-        \large\bfseries #1
-        \normalsize\normalfont
+        \bfseries #1
+        \small\normalfont
         \ifthenelse{\equal{#2}{}}{}{~at ~\textbf{#2}~~}%
         \ifthenelse{\equal{#5}{}}{}{\textemdash~ #5~~}%
         \ifthenelse{\equal{#3}{}}{}{%
@@ -206,14 +211,14 @@
 % #1 - Language
 % #2 - Proficiency
 \newcommand*{\lang}[2]{%
-    {\large\textbf{#1}} & #2 \\
+    {\textbf{#1}} & \small#2 \\
 }
 
 % #1 - Skill Section Title
 % #2 - Skills
 \newcommand*{\skills}[2]{%
-    \subsection{#1}
-    #2
+    \subsection{\small#1}
+    \scriptsize#2
 }
 
 % #1 - Footnote
